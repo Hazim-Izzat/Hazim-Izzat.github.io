@@ -1108,7 +1108,7 @@ img.img_scrapbook_1 {
     max-width: 75%;
     max-height: 60%;
     position: relative;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 20px;
     box-sizing: border-box;
     filter: drop-shadow(5px 5px 5px black);
@@ -1135,18 +1135,17 @@ p.p_scrapbook_2 {
     text-shadow: 5px 5px 5px black;
     transition: font-size 1000ms ease;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     img.img_scrapbook_1 {
         max-width: 60%;
         height: fit-content;
     }
 }
-@media (max-height: 600px) {
+@media (max-height: 700px) {
     img.img_scrapbook_1 {
         width: auto;
         height: auto;
         max-height: 70%;
-        object-fit: contain;
     }
 }
 
