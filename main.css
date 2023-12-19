@@ -1078,7 +1078,7 @@ div.scrapbooksection {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
+    overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x none;
     scroll-snap-align: start;
