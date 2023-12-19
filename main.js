@@ -359,7 +359,7 @@ document.addEventListener("keydown", (escapeScrapbook) => {
 })
 
 //move scrapbook into mobile
-var scrapbookMediaW_1000 = window.matchMedia("(max-width: 1000px");
+var scrapbookMediaW_1000 = window.matchMedia("(max-width: 1000px)");
 
 function scrapbookIntoMobile() {
     if (scrapbookMediaW_1000.matches) {
