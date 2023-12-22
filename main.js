@@ -90,6 +90,8 @@ var projects_container_sotafujii = document.getElementById('projects_container_s
 var projects_container_lesapb = document.getElementById('projects_container_lesapb');
 var projects_container_wahnhaft = document.getElementById('projects_container_wahnhaft');
 
+var projects_list_closed = document.getElementsByClassName('projects_list_closed');
+
 var projects_lists = document.getElementsByClassName('projects_content_list');
 var projects_list_website = document.getElementById('projects_list_website');
 var projects_list_9004 = document.getElementById('projects_list_9004');
@@ -286,10 +288,6 @@ function scrapbookPopup() {
         for (let i = 0; i < p_scrapbook_2.length; i += 1) {
             p_scrapbook_2[i].style.fontSize = '12px';
         }
-
-        setTimeout (() => {
-            console.log('countScrapbookMedia = ' + countScrapbookMedia);
-        }, 50)
         
     } else {
         scrapbook.style.width = '500px';
@@ -304,9 +302,6 @@ function scrapbookPopup() {
             p_scrapbook_2[i].style.fontSize = '14px';
         }
 
-        setTimeout (() => {
-            console.log('countScrapbookMedia = ' + countScrapbookMedia);
-        }, 50)
     }
     if (count === 4) {
         scrapbook.addEventListener("scroll", scrapbook_scroll_listeners);
@@ -344,8 +339,6 @@ function scrapbookcloseFunction() {
         button_scrapbook_scroll_right.style.opacity = '0';
 
         document.removeEventListener("keydown", keyScrapbookHandler);
-
-        console.log('countScrapbookMedia = '+ countScrapbookMedia);
     }
 }
 document.addEventListener("keydown", (escapeScrapbook) => {
@@ -627,6 +620,9 @@ button_sidebar.onclick = function sidebarPopUp() {
     }, 10)
 }
 
+setTimeout(() => {
+    maincontents.scrollTop = about.offsetTop;
+}, 2000);
 
 maincontents.addEventListener('scroll', () => {
     scrolled = maincontents.scrollTop;
@@ -665,7 +661,13 @@ maincontents.addEventListener('scroll', () => {
         backgroundcolor_black.style.opacity = '0%'
 
         //Close projects list
-        
+
+        for (let i = 0; i < projects_list_closed.length; i += 1) {
+            projects_list_closed[i].style.margin = '';
+            projects_list_closed[i].style.padding = '';
+            projects_list_closed[i].style.fontSize = '';
+            projects_list_closed[i].style.opacity = '';   
+        }
         for (let i = 0; i < projects_a_text.length; i += 1) {
             projects_a_text[i].style.padding = '';
         }
@@ -686,7 +688,10 @@ maincontents.addEventListener('scroll', () => {
 
 maincontents.addEventListener('scroll', scrapbookContentNoticePopup);
 
-scrapbookIntoMobile(scrapbookMediaW_1000);
+scrapbookIntoMobile();
+setTimeout(() => {
+    scrapbookIntoMobile();
+}, 500);
 scrapbookMediaW_1000.addEventListener("change", scrapbookIntoMobile);
 
 
@@ -987,6 +992,21 @@ function projectsDetailsPopup() {
         }, 550);
     }
 }
+document.querySelectorAll('.projects .projectscontainer').forEach(function(projects_container) {
+    projects_container.addEventListener('click', function() {
+        if (projects_container.querySelector('.projects_content_list').style.display == '') {
+            projects_container.querySelector('.projects_list_closed').style.margin = '0px';
+            projects_container.querySelector('.projects_list_closed').style.padding = '0px';
+            projects_container.querySelector('.projects_list_closed').style.fontSize = '0px';
+            projects_container.querySelector('.projects_list_closed').style.opacity = '0';
+        } else {
+            projects_container.querySelector('.projects_list_closed').style.margin = '';
+            projects_container.querySelector('.projects_list_closed').style.padding = '';
+            projects_container.querySelector('.projects_list_closed').style.fontSize = '';
+            projects_container.querySelector('.projects_list_closed').style.opacity = '';
+        }
+    })
+})
 
 projects_container_website.onclick = function click_work_website() {
     y = scrapbooksection_projects_website;
@@ -1062,7 +1082,6 @@ projects_container_wahnhaft.onclick = function click_work_wahnhaft() {
     }
     projectsDetailsPopup();
 }
-
 
 
 //Scrapbook section scroll

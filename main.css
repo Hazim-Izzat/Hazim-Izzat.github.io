@@ -30,16 +30,6 @@ a:hover {
 a.a_text {
     width: fit-content;
 }
-li.projects_a_text {
-    width: fit-content;
-    padding: 0px;
-    border-radius: 7px;
-    background-color: rgb(255, 255, 255, 0.1);
-    transition: all 200ms ease;
-}
-li.projects_a_text:hover {
-    background-color: rgb(255, 255, 255, 0.2);
-}
 
 * {
     margin: 0;
@@ -1007,6 +997,36 @@ ul.projects_content_list {
     text-shadow: 3px 3px 3px black;
     opacity: 0;
     transition: all 500ms ease;
+}
+li.projects_a_text {
+    width: fit-content;
+    padding: 0px;
+    border-radius: 7px;
+    background-color: rgb(255, 255, 255, 0.1);
+    transition: all 200ms ease;
+}
+li.projects_a_text:hover {
+    background-color: rgb(255, 255, 255, 0.2);
+}
+div.projects_list_closed {
+    width: fit-content;
+    margin-top: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 7px;
+    padding-right: 7px;
+    display: flex;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: bahnschrift;
+    font-size: 14px;
+    text-align: justify;
+    text-shadow: 3px 3px 3px black;
+    border-radius: 7px;
+    background-color: rgb(255, 255, 255, 0.1);
+    transition: all 500ms ease;
+}
+div.projects_list_closed:hover {
+    background-color: rgb(255, 255, 255, 0.2);
 }
 div.projectsspacer {
     width: 100%;
