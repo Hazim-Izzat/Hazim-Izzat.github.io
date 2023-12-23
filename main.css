@@ -120,7 +120,7 @@ div.container_all {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;

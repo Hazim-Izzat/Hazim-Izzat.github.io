@@ -969,7 +969,7 @@ function projectsDetailsPopup() {
 
     if (projects_list_forClick.style.display == '') {
         projects_list_forClick.style.display = 'block';
-        if (window.matchMedia('(max-width: 700px)').matches || window.matchMedia('(max-height: 600px)')) {
+        if (window.matchMedia('(max-width: 700px)').matches || window.matchMedia('(max-height: 600px)').matches) {
             setTimeout(() => {
                 projects_list_forClick.style.opacity = '1';
                 projects_list_forClick.style.marginTop = '15px';
