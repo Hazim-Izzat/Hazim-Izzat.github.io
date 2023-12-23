@@ -488,10 +488,10 @@ home_button.onclick = function goHome() {
     function resetMainContents(mediah_600px, mediaw_700px) {
         if (mediah_600px.matches || mediaw_700px.matches) {
             maincontents.style.height = about.scrollHeight + 'px';
-            maincontents.style.maxHeight = '88dvh';
+            maincontents.style.maxHeight = '';
             maincontents.style.overflowY = '';
 
-            about_expand.style.marginBottom = '0px';
+            about_expand.style.marginBottom = '';
         }else{
             maincontents.style.height = about.scrollHeight + 'px';
             maincontents.style.overflowY = '';
@@ -537,7 +537,7 @@ home_button.onclick = function goHome() {
     about_text_4.style.fontSize = '';
     about_text_4.style.lineHeight = '';
 
-    for (var i=1;i<bodysection.length;i+=1){
+    for (var i = 1; i < bodysection.length; i += 1){
         bodysection[i].style.opacity = '';
     }
 
@@ -817,6 +817,7 @@ about_expand.onclick = function about_banner_popup() {
         }, 10)
 
         maincontents.style.overflowY = 'auto';
+        
         maincontents.style.height = '88dvh';
 
         for (var i=1;i<bodysection.length;i+=1){
