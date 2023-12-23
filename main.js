@@ -969,15 +969,27 @@ function projectsDetailsPopup() {
 
     if (projects_list_forClick.style.display == '') {
         projects_list_forClick.style.display = 'block';
-        setTimeout(() => {
-            projects_list_forClick.style.opacity = '1';
-            projects_list_forClick.style.marginTop = '15px';
-            projects_list_forClick.style.fontSize = '14px';
-            projects_list_forClick.style.lineHeight = '22px';
-            for (let i = 0; i < projects_a_text.length; i += 1) {
-                    projects_a_text[i].style.padding = '5px';
-            }
-        }, 50);
+        if (window.matchMedia('(max-width: 700px)').matches || window.matchMedia('(max-height: 600px)')) {
+            setTimeout(() => {
+                projects_list_forClick.style.opacity = '1';
+                projects_list_forClick.style.marginTop = '15px';
+                projects_list_forClick.style.fontSize = '12px';
+                projects_list_forClick.style.lineHeight = '22px';
+                for (let i = 0; i < projects_a_text.length; i += 1) {
+                        projects_a_text[i].style.padding = '5px';
+                }
+            }, 50);
+        } else {
+            setTimeout(() => {
+                projects_list_forClick.style.opacity = '1';
+                projects_list_forClick.style.marginTop = '15px';
+                projects_list_forClick.style.fontSize = '14px';
+                projects_list_forClick.style.lineHeight = '22px';
+                for (let i = 0; i < projects_a_text.length; i += 1) {
+                        projects_a_text[i].style.padding = '5px';
+                }
+            }, 50);
+        }
     }else{
         projects_list_forClick.style.opacity = '';
         projects_list_forClick.style.marginTop = '';

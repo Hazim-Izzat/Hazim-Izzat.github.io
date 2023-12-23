@@ -1055,6 +1055,9 @@ div.projectsspacer {
     ul.projects_content_list {
         font-size: 12px;
     }
+    div.projects_list_closed {
+        font-size: 12px;
+    }
 }
 
 
