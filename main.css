@@ -481,7 +481,7 @@ img.button_contents_img_clicked {
 img.button_contents_img_clicked:active {
     height: 90%;
 }
-@media (max-height : 550px) {
+@media (max-height: 550px) {
     div.contents_bar {
         top: 10%;
     }
@@ -1161,8 +1161,6 @@ p.p_scrapbook_2 {
 }
 @media (max-height: 700px) {
     img.img_scrapbook_1 {
-        width: auto;
-        height: auto;
         max-height: 70%;
     }
 }

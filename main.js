@@ -454,6 +454,10 @@ function removeEventListeners() {
     scrapbookMediaW_1000.removeEventListener("change", scrapbookMobileScroll);
     container_all.style.overflowX = '';
     
+    setTimeout(() => {
+        maincontents.removeEventListener("scroll", maincontentsScrollListener);
+    }, 2500);
+    
     document.removeEventListener("keydown", keyScrapbookHandler);
     
     scrapbook.removeEventListener("scroll", scrapbook_scroll_listeners);
@@ -485,22 +489,8 @@ home_button.onclick = function goHome() {
     }, 1610)
 
     //hidescroll & maincontents height reset
-    function resetMainContents(mediah_600px, mediaw_700px) {
-        if (mediah_600px.matches || mediaw_700px.matches) {
-            maincontents.style.height = about.scrollHeight + 'px';
-            maincontents.style.maxHeight = '';
-            maincontents.style.overflowY = '';
-
-            about_expand.style.marginBottom = '';
-        }else{
-            maincontents.style.height = about.scrollHeight + 'px';
-            maincontents.style.overflowY = '';
-        }
-    }
-       
-    var mediaw_700px = window.matchMedia("(max-width: 700px)");
-    var mediah_600px = window.matchMedia("(max-height: 600px)");
-    resetMainContents(mediah_600px, mediaw_700px);
+    maincontents.style.height = '';
+    maincontents.style.overflowY = '';
 
     //bannerreset
     about_banner.style.width = '';
@@ -629,7 +619,8 @@ setTimeout(() => {
     maincontents.scrollTop = about.offsetTop;
 }, 2000);
 
-maincontents.addEventListener('scroll', () => {
+//maincontents scroll
+function maincontentsScrollListener() {
     scrolled = maincontents.scrollTop;
 
     if (scrolled < about.scrollHeight - 300) {
@@ -689,8 +680,7 @@ maincontents.addEventListener('scroll', () => {
         }, 550);
 
     }
-});
-
+}
 maincontents.addEventListener('scroll', scrapbookContentNoticePopup);
 
 scrapbookIntoMobile();
@@ -803,6 +793,8 @@ about_expand.onclick = function about_banner_popup() {
             scrapbookBump();
             scrapbookJumpButtonPopup();
             countScrapbookMediaIncrement();
+            
+            maincontents.addEventListener('scroll', maincontentsScrollListener);
         
             scrapbook.scrollTop = scrapbooksection_about.offsetTop;
             scrapbooksection_about.scrollLeft = scrapbook_about_text_4.offsetLeft;
@@ -862,7 +854,6 @@ button_scrapbook_scroll_right.style.opacity = '0';
 //scrapbook mobile jump button
 container_all.addEventListener("scroll", () => {
     scrolledAllX = container_all.scrollLeft;
-    console.log(scrolledAllX);
 
     if (scrolledAllX >= container_main.scrollWidth - 200) {
         container_mobile_scrapbook_jump.href = '#container_main';
