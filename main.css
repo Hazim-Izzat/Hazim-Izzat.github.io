@@ -130,7 +130,7 @@ div.container_all {
 }
 
 div.container_main {
-    width: 100%;
+    width: 100lvw;
     height: 100lvh;
     position: relative;
     display: flex;
@@ -1242,7 +1242,7 @@ img.button_scrapbook_scroll_right:hover {
 
 
 div.container_mobile_scrapbook {
-    width: 90%;
+    width: 90lvw;
     height: 100lvh;
     position: relative;
     display: none;
