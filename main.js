@@ -471,6 +471,15 @@ home_button.onclick = function goHome() {
 
     scrapbook.scrollTop = scrapbooksection_about.offsetTop;
     scrapbooksection_about.scrollLeft = scrapbook_about_banner.offsetLeft;
+
+    //horizontal mobile background reset
+    if (window.matchMedia('(max-height: 600px)').matches) {
+        setTimeout(() => {
+            backgroundcolor_purple.style.opacity = '';
+            backgroundcolor_blue.style.opacity = '';
+            backgroundcolor_black.style.opacity = '';
+        }, 1550);
+    }
     
     //contentsbarclose
     contents_bar.style.opacity = '';
