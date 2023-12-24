@@ -473,11 +473,13 @@ home_button.onclick = function goHome() {
     scrapbooksection_about.scrollLeft = scrapbook_about_banner.offsetLeft;
 
     //horizontal mobile background reset
-    if (window.matchMedia('(max-height: 600px)').matches) {
+    if (window.matchMedia('(max-height: 600px)').matches || window.matchMedia('(max-width: 1000px)').matches) {
         setTimeout(() => {
-            backgroundcolor_purple.style.opacity = '';
-            backgroundcolor_blue.style.opacity = '';
-            backgroundcolor_black.style.opacity = '';
+            if(backgroundcolor_purple.style.opacity !== '') {
+                backgroundcolor_purple.style.opacity = '';
+                backgroundcolor_blue.style.opacity = '';
+                backgroundcolor_black.style.opacity = '';
+            }
         }, 1550);
     }
     
@@ -1037,7 +1039,7 @@ projects_container_website.onclick = function click_work_website() {
     }
     projectsDetailsPopup();
 }
-document.getElementById("projects_website_link").innerHTML = window.location.href + ver;
+document.getElementById("projects_website_link").innerHTML = window.location.href;
 document.getElementById("projects_website_hyperlink").setAttribute('href', (window.location.href));
 projects_container_9004.onclick = function click_work_epyc_assets() {
     y = scrapbooksection_projects_epyc_assets;
@@ -1226,5 +1228,3 @@ img_scrapbook_popup_close.onclick = imgPopupClose;
 function imgPopupClose() {
     blur_img_scrapbook_popup.style.display = 'none';
 }
-
-var ver = "10:08";
