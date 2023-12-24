@@ -1037,7 +1037,7 @@ projects_container_website.onclick = function click_work_website() {
     }
     projectsDetailsPopup();
 }
-document.getElementById("projects_website_link").innerHTML = window.location.href + "ver";
+document.getElementById("projects_website_link").innerHTML = window.location.href + ver;
 document.getElementById("projects_website_hyperlink").setAttribute('href', (window.location.href));
 projects_container_9004.onclick = function click_work_epyc_assets() {
     y = scrapbooksection_projects_epyc_assets;
@@ -1227,4 +1227,4 @@ function imgPopupClose() {
     blur_img_scrapbook_popup.style.display = 'none';
 }
 
-var ver = "10:02";
+var ver = "10:08";
