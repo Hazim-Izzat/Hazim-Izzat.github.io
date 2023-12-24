@@ -1226,3 +1226,5 @@ img_scrapbook_popup_close.onclick = imgPopupClose;
 function imgPopupClose() {
     blur_img_scrapbook_popup.style.display = 'none';
 }
+
+var ver = "9:52";
