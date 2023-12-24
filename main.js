@@ -217,7 +217,7 @@ function aboutpopuptext_4(media_700px) {
     }
 }
 
-var media_700px = window.matchMedia("screen and (max-width: 700px)");
+var media_700px = window.matchMedia("(max-width: 700px)");
 
 //contents_bar media functions
 //contents_bar media max-height: 550px
@@ -236,7 +236,7 @@ function contents_bar_mediaH() {
     }, 10)
 }
 
-var mediah_550px = window.matchMedia("screen and (max-height: 550px)");
+var mediah_550px = window.matchMedia("(max-height: 550px)");
 
 //contents_bar media max-width: 1000px
 function barSidePopUp() {
@@ -252,7 +252,7 @@ function barSidePopUp() {
     }, 10)
 }
 
-var mediaw_1000px = window.matchMedia("screen and (max-width: 1000px)");
+var mediaw_1000px = window.matchMedia("(max-width: 1000px)");
 
 //scrapbook popup
 var countScrapbookMedia = 0;
@@ -352,7 +352,7 @@ document.addEventListener("keydown", (escapeScrapbook) => {
 })
 
 //move scrapbook into mobile
-var scrapbookMediaW_1000 = window.matchMedia("screen and (max-width: 1000px)");
+var scrapbookMediaW_1000 = window.matchMedia("(max-width: 1000px)");
 
 function scrapbookIntoMobile() {
     if (scrapbookMediaW_1000.matches) {
@@ -390,7 +390,7 @@ function scrapbookMobileScroll() {
 }
 
 //scrapbook mobile bump
-var scrapbookBumpMediaW_1000 = window.matchMedia("screen and (max-width: 1000px");
+var scrapbookBumpMediaW_1000 = window.matchMedia("(max-width: 1000px");
 
 function scrapbookBump() {
     if (scrapbookBumpMediaW_1000.matches) {
@@ -473,7 +473,7 @@ home_button.onclick = function goHome() {
     scrapbooksection_about.scrollLeft = scrapbook_about_banner.offsetLeft;
 
     //horizontal mobile background reset
-    if (window.matchMedia('screen and (max-height: 600px)').matches) {
+    if (window.matchMedia('(max-height: 600px)').matches) {
         setTimeout(() => {
             backgroundcolor_purple.style.opacity = '';
             backgroundcolor_blue.style.opacity = '';
@@ -978,7 +978,7 @@ function projectsDetailsPopup() {
 
     if (projects_list_forClick.style.display == '') {
         projects_list_forClick.style.display = 'block';
-        if (window.matchMedia('screen and (max-width: 700px)').matches || window.matchMedia('screen and (max-height: 600px)').matches) {
+        if (window.matchMedia('(max-width: 700px)').matches || window.matchMedia('(max-height: 600px)').matches) {
             setTimeout(() => {
                 projects_list_forClick.style.opacity = '1';
                 projects_list_forClick.style.marginTop = '15px';

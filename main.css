@@ -153,7 +153,7 @@ div.container_header {
     opacity: 0%;
     transition: opacity 1600ms ease, top 1600ms ease;
 }
-@media screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
     div.container_header {
         width: 95%;
     }
@@ -183,7 +183,7 @@ img.button_sidebar_img:hover {
 img.button_sidebar_img:active {
     height: 60%;
 }
-@media screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
     div.button_sidebar {
         display: flex;
     }  
@@ -269,7 +269,7 @@ img.button_contacts_expand:hover {
     opacity: 100%;
     background-color: rgba(106, 93, 97, 0.3);
 }
-@media screen and (max-width: 1300px) {
+@media (max-width: 1300px) {
     img.button_contacts_expand {
         display: none;
     }
@@ -334,7 +334,7 @@ p.button_contacts_full_link:active::after {
     color: white;
     opacity: 80%;
 }
-@media screen and (max-width: 1300px) {
+@media (max-width: 1300px) {
     p.button_contacts_full_link {
         display: none;
     }
@@ -356,7 +356,7 @@ p.text_contacts {
     font-size: 18px;
     
 }
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) {
     div.container_header {
         width: 95%;
     }
@@ -381,12 +381,12 @@ p.text_contacts {
         margin-left: 10px;
     }
 }
-@media screen and (max-width: 380px) {
+@media (max-width: 380px) {
     p.header_contents {
         max-width: 90px;
     }
 }
-@media screen and (max-width: 350px) {
+@media (max-width: 350px) {
     p.header_contents {
         max-width: 90px;
     }
@@ -405,7 +405,7 @@ p.text_contacts {
         margin-left: 5px;
     }
 }
-@media screen and (max-width: 300px) {
+@media (max-width: 300px) {
     div.home_button {
         display: none;
     }
@@ -422,7 +422,7 @@ div.contents_bar {
     opacity: 0%;
     transition: all 1600ms ease; 
 }
-@media screen and (max-width: 1300px) {
+@media (max-width: 1300px) {
     div.contents_bar {
         right: -50px;
     }
@@ -481,7 +481,7 @@ img.button_contents_img_clicked {
 img.button_contents_img_clicked:active {
     height: 90%;
 }
-@media screen and (max-height: 550px) {
+@media (max-height: 550px) {
     div.contents_bar {
         top: 10%;
     }
@@ -584,14 +584,14 @@ div.bodysection {
         flex-direction: column;
     }
 
-    @media screen and (max-width: 1100px) {
+    @media (max-width: 1100px) {
         &:nth-of-type(1) {
             height: fit-content;
             min-height: 100%;
             max-height: none;
         }
     }
-    @media screen and (max-height: 600px) {
+    @media (max-height: 600px) {
         &:nth-of-type(1) {
             height: fit-content;
             max-height: none;
@@ -612,7 +612,7 @@ div.about {
     border-radius: 20px;
     transition: all 500ms ease;
 }
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
     div.about {
         margin-right: 0px;
     }
@@ -632,7 +632,7 @@ div.about_banner:hover {
     background-color: rgba(78, 50, 59, 0.4);
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
-@media screen and (max-width: 350px) {
+@media (max-width: 350px) {
     div.maincontents {
         top: 15px;
         overflow-y: auto;
@@ -720,7 +720,7 @@ p.about_expand:active {
     height: 30px;
     font-size: 25px;
 }
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) {
     div.about {
         width: 90%;
     }
@@ -737,7 +737,7 @@ p.about_expand:active {
         font-size: 16px;
     }
 }
-@media screen and (max-height: 600px) {
+@media (max-height: 600px) {
     div.maincontents {
         height: fit-content;
         max-height: 80lvh;
@@ -846,7 +846,7 @@ div.edexpspacer {
     width: 100%;
     height: 50px;
 }
-@media screen and (max-width: 700px) {
+@media (max-width: 700px) {
     div.edexpcontainer {
         flex-wrap: wrap;
     }
@@ -1031,7 +1031,7 @@ div.projectsspacer {
     width: 100%;
     height: 70px;
 }
-@media screen and (max-width: 700px), screen and (max-height: 600px) {
+@media (max-width: 700px), (max-height: 600px) {
     div.projectscontainer {
         flex-wrap: wrap;
     }
@@ -1156,13 +1156,13 @@ p.p_scrapbook_2 {
     text-shadow: 5px 5px 5px black;
     transition: font-size 1000ms ease;
 }
-@media screen and (max-width: 700px) {
+@media (max-width: 700px) {
     img.img_scrapbook_1 {
         max-width: 60%;
         height: fit-content;
     }
 }
-@media screen and (max-height: 700px) {
+@media (max-height: 700px) {
     img.img_scrapbook_1 {
         max-height: 70%;
     }
