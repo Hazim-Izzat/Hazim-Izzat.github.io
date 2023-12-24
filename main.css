@@ -740,7 +740,7 @@ p.about_expand:active {
 @media (max-height: 600px) {
     div.maincontents {
         height: fit-content;
-        max-height: 80lvh;
+        max-height: 80dvh;
         overflow-y: auto;
     }
     p.about_expand {
@@ -1063,7 +1063,7 @@ div.projectsspacer {
 
 div.scrapbook {
     width: 0px;
-    height: 0lvh;
+    height: 0dvh;
     max-height: 800px;
     margin-left: 30px;
     margin-right: 10px;
