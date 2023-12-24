@@ -1039,7 +1039,7 @@ projects_container_website.onclick = function click_work_website() {
     }
     projectsDetailsPopup();
 }
-document.getElementById("projects_website_link").innerHTML = window.location.href;
+document.getElementById("projects_website_link").innerHTML = window.location.href + (' 10:45');
 document.getElementById("projects_website_hyperlink").setAttribute('href', (window.location.href));
 projects_container_9004.onclick = function click_work_epyc_assets() {
     y = scrapbooksection_projects_epyc_assets;
