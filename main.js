@@ -867,12 +867,22 @@ container_all.addEventListener("scroll", () => {
     scrolledAllX = container_all.scrollLeft;
 
     if (scrolledAllX >= container_main.scrollWidth - 200) {
-        container_mobile_scrapbook_jump.href = '#container_main';
+        container_mobile_scrapbook_jump.onclick = (() => {
+            container_all.scrollLeft = container_main.offsetLeft;
+            console.log('Scrolled to container_main');
+        })
         container_mobile_scrapbook_jump_img.style.rotate = '0deg';
     } else {
-        container_mobile_scrapbook_jump.href = '#container_mobile_scrapbook';
+        container_mobile_scrapbook_jump.onclick = (() => {
+            container_all.scrollLeft = container_mobile_scrapbook.offsetLeft;
+            console.log('Scrolled to container_mobile_scrapbook');
+        })
         container_mobile_scrapbook_jump_img.style.rotate = '';
     }
+})
+container_mobile_scrapbook_jump.onclick = (() => {
+    container_all.scrollLeft = container_mobile_scrapbook.offsetLeft;
+    console.log('Scrolled to container_mobile_scrapbook');
 })
 
 //content clicks
@@ -1039,7 +1049,7 @@ projects_container_website.onclick = function click_work_website() {
     }
     projectsDetailsPopup();
 }
-document.getElementById("projects_website_link").innerHTML = window.location.href + (' 11:00');
+document.getElementById("projects_website_link").innerHTML = window.location.href + (' 11:27');
 document.getElementById("projects_website_hyperlink").setAttribute('href', (window.location.href));
 projects_container_9004.onclick = function click_work_epyc_assets() {
     y = scrapbooksection_projects_epyc_assets;
