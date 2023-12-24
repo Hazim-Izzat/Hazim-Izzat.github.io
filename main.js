@@ -869,20 +869,17 @@ container_all.addEventListener("scroll", () => {
     if (scrolledAllX >= container_main.scrollWidth - 200) {
         container_mobile_scrapbook_jump.onclick = (() => {
             container_all.scrollLeft = container_main.offsetLeft;
-            console.log('Scrolled to container_main');
         })
         container_mobile_scrapbook_jump_img.style.rotate = '0deg';
     } else {
         container_mobile_scrapbook_jump.onclick = (() => {
             container_all.scrollLeft = container_mobile_scrapbook.offsetLeft;
-            console.log('Scrolled to container_mobile_scrapbook');
         })
         container_mobile_scrapbook_jump_img.style.rotate = '';
     }
 })
 container_mobile_scrapbook_jump.onclick = (() => {
     container_all.scrollLeft = container_mobile_scrapbook.offsetLeft;
-    console.log('Scrolled to container_mobile_scrapbook');
 })
 
 //content clicks
