@@ -405,13 +405,15 @@ function scrapbookBump() {
 }
 
 //scrapbook mobile jump button
+let scrapbookJumpButtonTimeout;
+
 function scrapbookJumpButtonPopup() {
-    if (container_mobile_scrapbook_jump.style.left === '') {
-        container_mobile_scrapbook_jump.style.left = '-10%';
-        setTimeout (() => {
-            container_mobile_scrapbook_jump.style.left = '';
-        }, 2000)
-    }
+    container_mobile_scrapbook_jump.style.left = '-10%';
+    
+    clearTimeout(scrapbookJumpButtonTimeout);
+    scrapbookJumpButtonTimeout = setTimeout(() => {
+        container_mobile_scrapbook_jump.style.left = '';
+    }, 2500)
 }
 
 //scrapbook content notice popup
@@ -875,6 +877,7 @@ container_all.addEventListener("scroll", () => {
             container_all.scrollLeft = container_main.offsetLeft;
         })
         container_mobile_scrapbook_jump_img.style.rotate = '0deg';
+        container_mobile_scrapbook_jump.style.left = '';
     } else {
         container_mobile_scrapbook_jump.onclick = (() => {
             container_all.scrollLeft = container_mobile_scrapbook.offsetLeft;
