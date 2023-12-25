@@ -408,7 +408,9 @@ function scrapbookBump() {
 let scrapbookJumpButtonTimeout;
 
 function scrapbookJumpButtonPopup() {
-    container_mobile_scrapbook_jump.style.left = '-10%';
+    if (container_all.scrollLeft <= container_main.scrollWidth - 200) {
+        container_mobile_scrapbook_jump.style.left = '-10%';
+    }
     
     clearTimeout(scrapbookJumpButtonTimeout);
     scrapbookJumpButtonTimeout = setTimeout(() => {
