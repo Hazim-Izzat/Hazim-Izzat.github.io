@@ -23,6 +23,7 @@ var header_contents = document.getElementById('header_contents');
 var header_contents_jump = document.getElementById('header_contents_jump');
 
 var contacts_expand = document.getElementById('button_contacts_expand');
+var button_contacts_hyperlink = document.getElementsByClassName('button_contacts_hyperlink');
 var button_contacts_full_link = document.getElementsByClassName('button_contacts_full_link');
 
 var link_tel = document.getElementById('link_tel');
@@ -572,7 +573,7 @@ home_button.onclick = function goHome() {
     removeEventListeners();
 }
 
-contacts_expand.onclick = function contactsExpandFunction() {
+function contactsExpandFunction() {
     if (contacts_expand.style.rotate == '') {
         contacts_expand.style.rotate = '180deg';
 
@@ -593,6 +594,9 @@ contacts_expand.onclick = function contactsExpandFunction() {
 
     }
 }
+contacts_expand.onclick = (() => {
+    contactsExpandFunction();
+})
 
 link_tel.onclick = function telCopy() {
     navigator.clipboard.writeText(link_tel.textContent);
@@ -634,7 +638,7 @@ setTimeout(() => {
 function maincontentsScrollListener() {
     scrolled = maincontents.scrollTop;
 
-    if (scrolled < about.scrollHeight - 300) {
+    if (scrolled < about.scrollHeight - 400) {
         header_contents.textContent = 'About';
         header_contents_jump.href = '#about';
         button_contents_jump_clicked_about.style.display = 'flex';
@@ -645,7 +649,7 @@ function maincontentsScrollListener() {
         button_about.style.background = '';
         backgroundcolor_purple.style.opacity = '0%';        
     }
-    if ((scrolled >= about.scrollHeight - 300) && (scrolled < projects.offsetTop - 300)) {
+    if ((scrolled >= about.scrollHeight - 400) && (scrolled < projects.offsetTop - 400)) {
         header_contents.textContent = 'Education & Experience';
         header_contents_jump.href = '#edexp_education';
         button_contents_jump_clicked_edexp.style.display = 'flex';
@@ -656,7 +660,7 @@ function maincontentsScrollListener() {
         button_edexp.style.background = '';
         backgroundcolor_blue.style.opacity = '0%';
     }
-    if (scrolled >= projects.offsetTop - 300) {
+    if (scrolled >= projects.offsetTop - 400) {
         header_contents.textContent = 'Projects';
         header_contents_jump.href = '#projects';
         button_contents_jump_clicked_projects.style.display = 'flex';
@@ -1235,3 +1239,27 @@ img_scrapbook_popup_close.onclick = imgPopupClose;
 function imgPopupClose() {
     blur_img_scrapbook_popup.style.display = 'none';
 }
+
+//scrapbook contact button
+var scrapbook_contact_button = document.getElementById('scrapbook_contact_button');
+
+function scrapbookContactClick() {
+    contactsExpandFunction();
+}
+
+scrapbook_contact_button.onclick = (() => {
+    scrapbookContactClick();
+    if (mediaw_1000px.matches) {
+        container_all.scrollLeft = container_main.offsetLeft;
+        setTimeout(() => {
+            for (let i = 0; i < button_contacts_hyperlink.length; i += 1) {
+                button_contacts_hyperlink[i].style.height = '120%';
+            }
+            setTimeout(() => {
+                for (let i = 0; i < button_contacts_hyperlink.length; i += 1) {
+                    button_contacts_hyperlink[i].style.height = '100%';
+                }   
+            }, 500);
+        }, 700);
+    }
+})

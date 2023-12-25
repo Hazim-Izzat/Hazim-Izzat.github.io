@@ -297,6 +297,7 @@ a.button_contacts_hyperlink {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 100ms ease;
 }
 p.button_contacts_full_link {
     margin-left: 0px;
