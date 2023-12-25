@@ -887,7 +887,13 @@ div.edexpspacer {
     border-radius: 15px;
     background-color: rgba(10, 10, 10, 0.7);
     box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.3);
-    opacity: 0;
+    opacity: 0;        
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     transition: all 500ms ease;
 }
 
