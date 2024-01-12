@@ -89,6 +89,7 @@ var projects_container_7000 = document.getElementById('projects_container_7000')
 var projects_container_csr = document.getElementById('projects_container_csr');
 var projects_container_sotafujii = document.getElementById('projects_container_sotafujii');
 var projects_container_lesapb = document.getElementById('projects_container_lesapb');
+var projects_container_mip = document.getElementById('projects_container_mip');
 var projects_container_wahnhaft = document.getElementById('projects_container_wahnhaft');
 
 var projects_list_closed = document.getElementsByClassName('projects_list_closed');
@@ -101,6 +102,7 @@ var projects_list_7000 = document.getElementById('projects_list_7000');
 var projects_list_csr = document.getElementById('projects_list_csr');
 var projects_list_sotafujii = document.getElementById('projects_list_sotafujii');
 var projects_list_lesapb = document.getElementById('projects_list_lesapb');
+var projects_list_mip = document.getElementById('projects_list_mip');
 var projects_list_wahnhaft = document.getElementById('projects_list_wahnhaft');
 
 var projects_a_text = document.getElementsByClassName('projects_a_text');
@@ -129,6 +131,7 @@ var scrapbooksection_projects_tco = document.getElementById('scrapbooksection_pr
 var scrapbooksection_projects_amdcsr = document.getElementById('scrapbooksection_projects_amdcsr');
 var scrapbooksection_projects_sota = document.getElementById('scrapbooksection_projects_sota');
 var scrapbooksection_projects_lesapb = document.getElementById('scrapbooksection_projects_lesapb');
+var scrapbooksection_projects_mip = document.getElementById('scrapbooksection_projects_mip');
 var scrapbooksection_projects_wahnhaft = document.getElementById('scrapbooksection_projects_wahnhaft');
 
 var scrapbookclose = document.getElementsByClassName('scrapbookclose');
@@ -837,7 +840,7 @@ about_expand.onclick = function about_banner_popup() {
             
             maincontents.style.height = '88dvh';
     
-            for (var i=1; i < bodysection.length; i += 1){
+            for (var i = 1; i < bodysection.length; i += 1){
                 bodysection[i].style.opacity = '1';
             }
     
@@ -1111,6 +1114,15 @@ projects_container_lesapb.onclick = function click_work_lesapb() {
     }
     projectsDetailsPopup();
 }
+projects_container_mip.onclick = function click_work_mip() {
+    y = scrapbooksection_projects_mip;
+    x = scrapbooksection_projects_mip;
+    projects_list_forClick = projects_list_mip;
+    if (projects_list_forClick.style.display == '') {
+        scrapbookScroll_onClick();
+    }
+    projectsDetailsPopup();
+}
 projects_container_wahnhaft.onclick = function click_work_wahnhaft() {
     y = scrapbooksection_projects_wahnhaft;
     x = scrapbooksection_projects_wahnhaft;
@@ -1193,6 +1205,9 @@ function scrapbook_buttons_scroll_y() {
     } else if (scrapbook.scrollTop >= scrapbooksection_projects_lesapb.offsetTop - 50 && scrapbook.scrollTop < scrapbooksection_projects_lesapb.offsetTop + 50) {
         scrolledScrapbook_forButtons = scrapbooksection_projects_lesapb;
         console.log("lesapb");
+    } else if (scrapbook.scrollTop >= scrapbooksection_projects_mip.offsetTop - 50 && scrapbook.scrollTop < scrapbooksection_projects_mip.offsetTop + 50) {
+        scrolledScrapbook_forButtons = scrapbooksection_projects_mip;
+        console.log("mip");
     } else if (scrapbook.scrollTop >= scrapbooksection_projects_wahnhaft.offsetTop - 50 && scrapbook.scrollTop < scrapbooksection_projects_wahnhaft.offsetTop + 50) {
         scrolledScrapbook_forButtons = scrapbooksection_projects_wahnhaft;
         console.log("wahnhaft");
