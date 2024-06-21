@@ -156,8 +156,8 @@ var count = 0;
 
 function callFunctionBasedOnURL() {
     // Get the current URL path
-    console.log(window.location.pathname);
-    if (window.location.pathname == "/?test") {
+    console.log(window.location);
+    if (window.location == "https://hazim-izzat.github.io/?test") {
         console.log("Test successful");
     }
 }
