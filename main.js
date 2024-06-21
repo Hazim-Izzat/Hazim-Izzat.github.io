@@ -154,6 +154,16 @@ var scrapbook_work_amd = document.getElementById('edexp_work_amd');
 
 var count = 0;
 
+function callFunctionBasedOnURL() {
+    // Get the current URL path
+    const path = window.location.pathname;
+    if (path = "https://hazim-izzat.github.io/?test") {
+        about_banner_sub.textContent = "Test successful";
+    }
+}
+callFunctionBasedOnURL();
+        
+
 //about text media functions
 
 function aboutpopuptext_1(media_700px) {
