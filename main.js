@@ -156,8 +156,9 @@ var count = 0;
 
 function callFunctionBasedOnURL() {
     // Get the current URL path
+    console.log(window.location.pathname);
     if (window.location.pathname == "https://hazim-izzat.github.io/?test") {
-        about_banner_sub.textContent = "Test successful";
+        console.log("Test successful");
     }
 }
 callFunctionBasedOnURL();
