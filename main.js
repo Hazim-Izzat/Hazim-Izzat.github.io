@@ -60,6 +60,7 @@ var bodysection = document.querySelectorAll('.bodysection');
 var about = document.getElementById('about');
 var about_banner = document.getElementById('about_banner');
 var about_banner_sub = document.getElementById('banner_sub');
+var about_text_0 = document.getElementById('about_text_0');
 var about_text_1 = document.getElementById('about_text_1');
 var about_text_2 = document.getElementById('about_text_2');
 var about_text_3 = document.getElementById('about_text_3');
@@ -157,6 +158,22 @@ var count = 0;
 
 //about text media functions
 
+function aboutpopuptext_0(media_700px) {
+    if (media_700px.matches) {
+        about_text_0.style.opacity = '100%';
+        about_text_0.style.padding = '10px';
+        about_text_0.style.marginRight = 'auto';
+        about_text_0.style.fontSize = '12px';
+        about_text_0.style.lineHeight = '130%';
+
+    }else{
+        about_text_0.style.opacity = '100%';
+        about_text_0.style.padding = '10px';
+        about_text_0.style.marginRight = 'auto';
+        about_text_0.style.fontSize = '16px';
+        about_text_0.style.lineHeight = '130%';
+    }
+}
 function aboutpopuptext_1(media_700px) {
     if (media_700px.matches) {
         about_text_1.style.opacity = '100%';
@@ -482,15 +499,13 @@ home_button.onclick = function goHome() {
     scrapbooksection_about.scrollLeft = scrapbook_about_banner.offsetLeft;
 
     //horizontal mobile background reset
-    if (window.matchMedia('(max-height: 600px)').matches || window.matchMedia('(max-width: 1000px)').matches) {
-        setTimeout(() => {
-            if(backgroundcolor_purple.style.opacity !== '') {
-                backgroundcolor_purple.style.opacity = '';
-                backgroundcolor_blue.style.opacity = '';
-                backgroundcolor_black.style.opacity = '';
-            }
-        }, 1550);
-    }
+    setTimeout(() => {
+        if(backgroundcolor_purple.style.opacity !== '') {
+            backgroundcolor_purple.style.opacity = '';
+            backgroundcolor_blue.style.opacity = '';
+            backgroundcolor_black.style.opacity = '';
+        }
+    }, 1550);
     
     //contentsbarclose
     contents_bar.style.opacity = '';
@@ -523,6 +538,12 @@ home_button.onclick = function goHome() {
     about_spacer.style.height = '';
 
     //hidetext
+    about_text_0.style.opacity = '';
+    about_text_0.style.padding = '';
+    about_text_0.style.marginRight = '';
+    about_text_0.style.fontSize = '';
+    about_text_0.style.lineHeight = '';
+    
     about_text_1.style.opacity = '';
     about_text_1.style.padding = '';
     about_text_1.style.marginRight = '';
@@ -758,6 +779,18 @@ about_expand.onclick = function about_banner_popup() {
     
         about_banner.style.width = '100%';
     
+        aboutpopuptext_0(media_700px);
+        media_700px.addEventListener("change", aboutpopuptext_0);
+
+        scrapbookBump();
+        scrapbookJumpButtonPopup();
+        countScrapbookMediaIncrement();
+        
+        scrapbook.scrollTop = scrapbooksection_about.offsetTop;
+        scrapbooksection_about.scrollLeft = scrapbook_about_text_1.offsetLeft;
+        
+    } else if (count === 2) {
+    
         aboutpopuptext_1(media_700px);
         media_700px.addEventListener("change", aboutpopuptext_1);
 
@@ -768,7 +801,7 @@ about_expand.onclick = function about_banner_popup() {
         scrapbook.scrollTop = scrapbooksection_about.offsetTop;
         scrapbooksection_about.scrollLeft = scrapbook_about_text_1.offsetLeft;
         
-    } else if (count === 2) {
+    } else if (count === 3) {
 
         aboutpopuptext_2(media_700px);
         media_700px.addEventListener("change", aboutpopuptext_2);
@@ -780,7 +813,7 @@ about_expand.onclick = function about_banner_popup() {
         scrapbook.scrollTop = scrapbooksection_about.offsetTop;
         scrapbooksection_about.scrollLeft = scrapbook_about_text_2.offsetLeft;
     
-    } else if (count === 3) {
+    } else if (count === 4) {
         
         about_expand.style.marginBottom = '0px';
 
@@ -796,7 +829,7 @@ about_expand.onclick = function about_banner_popup() {
 
         about_spacer.style.height = '50px';
 
-    } else if (count === 4) {
+    } else if (count === 5) {
         
         for (var i = 1; i < bodysection.length; i += 1){
             bodysection[i].style.display = 'flex';
@@ -936,6 +969,11 @@ function scrapbookScroll_onClick() {
 
 
 //about
+about_text_0.onclick = function click_about_text_0() {
+    y = scrapbooksection_about;
+    x = scrapbook_about_text_1;
+    scrapbookScroll_onClick();
+}
 about_text_1.onclick = function click_about_text_1() {
     y = scrapbooksection_about;
     x = scrapbook_about_text_1;

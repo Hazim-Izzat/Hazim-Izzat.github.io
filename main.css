@@ -560,7 +560,7 @@ div.edexp_sub_buttons:hover p.edexp_sub_buttons_text {
 
 div.maincontents {
     width: 700px;
-    height: 660px;
+    height: 820px;
     top: 20px;
     position: relative;
     display: flex;
@@ -583,8 +583,9 @@ div.bodysection {
     transition: all 2000ms ease;
 
     &:nth-of-type(1){
-        height: 100%;
-        max-height: 660px;
+        height: fit-content;
+        min-height: 100%;
+        max-height: 900px;
         display: flex;
         align-items: center;
         border-radius: 20px;
