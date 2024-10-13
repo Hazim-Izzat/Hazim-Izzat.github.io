@@ -52,6 +52,11 @@ body, html {
     box-shadow: inset 0px 0px 100px rgba(0, 0, 0, 1);
     transition: opacity 1000ms ease;
 }
+@media (max-width: 1000px) {
+    body, html {
+        height: 101%;
+    }
+}
 
 div.background {
     width: 100%;
