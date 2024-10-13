@@ -154,18 +154,6 @@ var scrapbook_work_amd = document.getElementById('edexp_work_amd');
 
 var count = 0;
 
-//For mobile
-function aboutpopuptext_4(mediaw_1000px) {
-    if (mediaw_1000px.matches) {
-        window.scrollTo(0,1)
-    }else{
-        about_text_4.style.opacity = '100%';
-        about_text_4.style.padding = '10px';
-        about_text_4.style.marginRight = 'auto';
-        about_text_4.style.fontSize = '16px';
-        about_text_4.style.lineHeight = '130%';
-    }
-}
 
 //about text media functions
 
