@@ -75,6 +75,8 @@ var edexp_vol = document.getElementById('edexp_volunteering');
 
 var edexp_education_degree = document.getElementById('edexp_education_degree');
 var edexp_education_foundation = document.getElementById('edexp_education_foundation');
+var edexp_work_sns = document.getElementById('edexp_work_sns');
+var edexp_work_web = document.getElementById('edexp_work_web');
 var edexp_work_amd = document.getElementById('edexp_work_amd');
 var edexp_volunteer_amdcsr = document.getElementById('edexp_volunteer_amdcsr');
 var edexp_volunteer_lesapb = document.getElementById('edexp_volunteer_lesapb');
@@ -118,6 +120,8 @@ var scrapbooksection_about = document.getElementById('scrapbooksection_about');
 var scrapbooksection_education_degree = document.getElementById('scrapbooksection_education_degree');
 var scrapbooksection_education_foundation = document.getElementById('scrapbooksection_education_foundation');
 
+var scrapbooksection_work_sns = document.getElementById('scrapbooksection_work_sns');
+var scrapbooksection_work_web = document.getElementById('scrapbooksection_work_web');
 var scrapbooksection_work_amd = document.getElementById('scrapbooksection_work_amd');
 
 var scrapbooksection_volunteer_amdcsr = document.getElementById('scrapbooksection_volunteer_amdcsr');
@@ -143,6 +147,7 @@ var p_scrapbook_1 = document.getElementsByClassName('p_scrapbook_1');
 var p_scrapbook_2 = document.getElementsByClassName('p_scrapbook_2');
 
 var scrapbook_about_banner = document.getElementById('scrapbook_about_banner');
+var scrapbook_about_text_0 = document.getElementById('scrapbook_about_text_0');
 var scrapbook_about_text_1 = document.getElementById('scrapbook_about_text_1');
 var scrapbook_about_text_2 = document.getElementById('scrapbook_about_text_2');
 var scrapbook_about_text_3 = document.getElementById('scrapbook_about_text_3');
@@ -151,6 +156,8 @@ var scrapbook_about_text_4 = document.getElementById('scrapbook_about_text_4');
 var scrapbook_education_degree_1 = document.getElementById('scrapbook_education_degree_1');
 var scrapbook_education_foundation_1 = document.getElementById('scrapbook_education_foundation_1');
 
+var scrapbook_work_sns = document.getElementById('edexp_work_sns');
+var scrapbook_work_web = document.getElementById('edexp_work_web');
 var scrapbook_work_amd = document.getElementById('edexp_work_amd');
 
 var count = 0;
@@ -787,7 +794,7 @@ about_expand.onclick = function about_banner_popup() {
         countScrapbookMediaIncrement();
         
         scrapbook.scrollTop = scrapbooksection_about.offsetTop;
-        scrapbooksection_about.scrollLeft = scrapbook_about_text_1.offsetLeft;
+        scrapbooksection_about.scrollLeft = scrapbook_about_text_0.offsetLeft;
         
     } else if (count === 2) {
     
@@ -971,7 +978,7 @@ function scrapbookScroll_onClick() {
 //about
 about_text_0.onclick = function click_about_text_0() {
     y = scrapbooksection_about;
-    x = scrapbook_about_text_1;
+    x = scrapbook_about_text_0;
     scrapbookScroll_onClick();
 }
 about_text_1.onclick = function click_about_text_1() {
@@ -1006,6 +1013,16 @@ edexp_education_foundation.onclick = function click_education_foundation() {
     scrapbookScroll_onClick();
 }
 //work
+edexp_work_sns.onclick = function click_work_sns() {
+    y = scrapbooksection_work_sns;
+    x = scrapbook_work_sns;
+    scrapbookScroll_onClick();
+}
+edexp_work_web.onclick = function click_work_web() {
+    y = scrapbooksection_work_web;
+    x = scrapbook_work_web;
+    scrapbookScroll_onClick();
+}
 edexp_work_amd.onclick = function click_work_amd() {
     y = scrapbooksection_work_amd;
     x = scrapbook_work_amd;
@@ -1208,6 +1225,12 @@ function scrapbook_buttons_scroll_y() {
     } else if (scrapbook.scrollTop >= scrapbooksection_education_foundation.offsetTop - 50 && scrapbook.scrollTop < scrapbooksection_education_foundation.offsetTop + 50) {
         scrolledScrapbook_forButtons = scrapbooksection_education_foundation;
         console.log("foundation");
+    } else if (scrapbook.scrollTop >= scrapbooksection_work_sns.offsetTop - 50 && scrapbook.scrollTop < scrapbooksection_work_sns.offsetTop + 50) {
+        scrolledScrapbook_forButtons = scrapbooksection_work_sns;
+        console.log("sns");
+    } else if (scrapbook.scrollTop >= scrapbooksection_work_web.offsetTop - 50 && scrapbook.scrollTop < scrapbooksection_work_web.offsetTop + 50) {
+        scrolledScrapbook_forButtons = scrapbooksection_work_web;
+        console.log("web");
     } else if (scrapbook.scrollTop >= scrapbooksection_work_amd.offsetTop - 50 && scrapbook.scrollTop < scrapbooksection_work_amd.offsetTop + 50) {
         scrolledScrapbook_forButtons = scrapbooksection_work_amd;
         console.log("amd");
