@@ -54,7 +54,7 @@ body, html {
 }
 @media (max-width: 1000px) {
     body, html {
-        height: 105lvh;
+        height: 101lvh;
     }
 }
 
@@ -65,7 +65,7 @@ div.background {
 }
 @media (max-width: 1000px) {
     div.background {
-        height: 105lvh;
+        height: 101lvh;
     }
 }
 div.backgroundcolor_purple {
